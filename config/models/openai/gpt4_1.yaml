@@ -1,0 +1,59 @@
+
+# GPT-4-1 Configuration
+name: "GPT-4-1"
+model_id: "gpt-4-1106-preview"
+provider: "OpenAI"
+version: "1106"
+release_date: "2023-11-06"
+description: "OpenAI's GPT-4 Turbo model with improved reasoning and instruction following"
+
+api_configuration:
+  endpoint: "https://api.openai.com/v1/chat/completions"
+  api_key: "${OPENAI_API_KEY}"
+  organization_id: "${OPENAI_ORG_ID}"
+  api_type: "rest"
+  request_timeout: 180
+  max_retries: 3
+  retry_delay: 2
+
+capabilities:
+  multimodal: false
+  vision: false
+  function_calling: true
+  json_mode: true
+  parallel_function_calling: true
+  streaming: true
+  multi_turn_conversation: true
+  reasoning: true
+  code_generation: true
+  multilingual: true
+  custom_instructions: true
+
+performance:
+  context_window: 128000
+  input_token_limit: 128000
+  output_token_limit: 4096
+  default_temperature: 0.7
+  supports_temperature: true
+  temperature_range: [0.0, 2.0]
+  supports_top_p: true
+  top_p_range: [0.0, 1.0]
+  supports_presence_penalty: true
+  supports_frequency_penalty: true
+
+pricing:
+  input_tokens: 0.00001 # $10 per million tokens
+  output_tokens: 0.00003 # $30 per million tokens
+
+testing_parameters:
+  default_system_prompt: "You are a helpful AI assistant."
+  test_with_system_prompts: true
+  test_with_vision: false
+  test_with_function_calling: false
+  use_streaming: false
+  evaluation_modes:
+    - standard
+    - chain_of_thought
+    - few_shot
+    - zero_shot
+  temperature_variations: [0.0, 0.7, 1.0]

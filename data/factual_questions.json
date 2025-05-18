@@ -1,0 +1,163 @@
+
+{
+  "science": [
+    {
+      "question": "What is the chemical symbol for gold?",
+      "expected_answer": "Au",
+      "domain": "chemistry",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the process by which plants make their own food using sunlight?",
+      "expected_answer": "Photosynthesis",
+      "domain": "biology",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the speed of light in a vacuum?",
+      "expected_answer": "299,792,458 meters per second",
+      "domain": "physics",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the hardest natural substance on Earth?",
+      "expected_answer": "Diamond",
+      "domain": "geology",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the main component of the Earth's atmosphere?",
+      "expected_answer": "Nitrogen",
+      "domain": "earth science",
+      "difficulty": "medium"
+    }
+  ],
+  "history": [
+    {
+      "question": "In what year did World War II end?",
+      "expected_answer": "1945",
+      "domain": "modern history",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Who was the primary author of the Declaration of Independence?",
+      "expected_answer": "Thomas Jefferson",
+      "domain": "American history",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Which ancient civilization built the Great Pyramid of Giza?",
+      "expected_answer": "Ancient Egyptians",
+      "domain": "ancient history",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Who was the first woman to win a Nobel Prize?",
+      "expected_answer": "Marie Curie",
+      "domain": "scientific history",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What year did the Berlin Wall fall?",
+      "expected_answer": "1989",
+      "domain": "modern history",
+      "difficulty": "medium"
+    }
+  ],
+  "geography": [
+    {
+      "question": "What is the capital of Japan?",
+      "expected_answer": "Tokyo",
+      "domain": "capitals",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which is the longest river in the world?",
+      "expected_answer": "Nile",
+      "domain": "physical geography",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the largest desert in the world?",
+      "expected_answer": "Antarctic Desert",
+      "domain": "physical geography",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Which country has the largest population in the world?",
+      "expected_answer": "India",
+      "domain": "demographics",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the smallest country in the world by land area?",
+      "expected_answer": "Vatican City",
+      "domain": "political geography",
+      "difficulty": "medium"
+    }
+  ],
+  "literature": [
+    {
+      "question": "Who wrote 'Pride and Prejudice'?",
+      "expected_answer": "Jane Austen",
+      "domain": "classic literature",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the name of the wizard school in the Harry Potter series?",
+      "expected_answer": "Hogwarts",
+      "domain": "modern literature",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Who is the author of 'One Hundred Years of Solitude'?",
+      "expected_answer": "Gabriel García Márquez",
+      "domain": "world literature",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Which Shakespeare play features the character Ophelia?",
+      "expected_answer": "Hamlet",
+      "domain": "classic literature",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Who wrote 'The Divine Comedy'?",
+      "expected_answer": "Dante Alighieri",
+      "domain": "classic literature",
+      "difficulty": "medium"
+    }
+  ],
+  "technology": [
+    {
+      "question": "Who is considered the co-founder of Apple Inc. along with Steve Jobs?",
+      "expected_answer": "Steve Wozniak",
+      "domain": "tech history",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What does CPU stand for in computing?",
+      "expected_answer": "Central Processing Unit",
+      "domain": "computer hardware",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What programming language was created by Guido van Rossum in 1991?",
+      "expected_answer": "Python",
+      "domain": "programming",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the name of the first widely-used web browser?",
+      "expected_answer": "Mosaic",
+      "domain": "internet history",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What does HTML stand for?",
+      "expected_answer": "HyperText Markup Language",
+      "domain": "web development",
+      "difficulty": "easy"
+    }
+  ]
+}

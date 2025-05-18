@@ -1,0 +1,90 @@
+
+# Foundation LLM Factual Accuracy Tests
+version: "1.0.0"
+name: "foundation_llm_factual_accuracy_tests"
+description: "Test suite for evaluating factual accuracy of foundation LLMs"
+
+# Test configuration
+test_config:
+  timeout_per_test: 180  # seconds
+  max_retries: 2
+  cache_responses: true
+  parallel_execution: true
+
+# Knowledge domains to test
+knowledge_domains:
+  - science
+  - history
+  - geography
+  - literature
+  - arts
+  - technology
+
+# Metrics for evaluating factual accuracy
+metrics:
+  - name: "accuracy"
+    description: "Proportion of correct responses"
+    weight: 1.0
+    
+  - name: "hallucination_rate"
+    description: "Rate of generating false information"
+    weight: 0.9
+    inverse: true  # Lower is better
+    
+  - name: "confidence_calibration"
+    description: "Alignment between model confidence and correctness"
+    weight: 0.7
+    
+  - name: "source_citation"
+    description: "Ability to cite reliable sources"
+    weight: 0.6
+
+# Test cases for factual knowledge
+test_cases:
+  # Science test cases
+  - id: "science_facts"
+    name: "Scientific Facts"
+    description: "Tests knowledge of basic scientific facts"
+    domain: "science"
+    difficulty: "medium"
+    prompt_template: |
+      Please answer the following science question with a short, direct answer.
+      
+      Question: {question}
+    examples:
+      - input:
+          question: "What is the chemical symbol for gold?"
+        expected_output: "Au"
+      - input:
+          question: "What is the process by which plants make their own food using sunlight?"
+        expected_output: "Photosynthesis"
+    test_cases_count: 20
+    evaluation_method: "exact_match"
+    primary_metrics: ["accuracy", "hallucination_rate"]
+    
+  # History test cases
+  - id: "historical_facts"
+    name: "Historical Facts"
+    description: "Tests knowledge of historical events and figures"
+    domain: "history"
+    difficulty: "medium"
+    prompt_template: |
+      Please answer the following history question with a short, direct answer.
+      
+      Question: {question}
+    examples:
+      - input:
+          question: "In what year did World War II end?"
+        expected_output: "1945"
+      - input:
+          question: "Who was the primary author of the Declaration of Independence?"
+        expected_output: "Thomas Jefferson"
+    test_cases_count: 20
+    evaluation_method: "exact_match"
+    primary_metrics: ["accuracy", "hallucination_rate"]
+
+# Evaluation configuration
+evaluation:
+  automated_metrics: true
+  comparative_analysis: true
+  reference_model: "gpt4o"  # Model to use as a reference for comparing others

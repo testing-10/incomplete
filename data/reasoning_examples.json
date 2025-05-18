@@ -1,0 +1,153 @@
+
+{
+  "logical_reasoning": [
+    {
+      "premises": "All humans are mortal. Socrates is human.",
+      "conclusion": "Socrates is mortal.",
+      "valid": true,
+      "explanation": "This is a valid syllogism in the form: All A are B. C is A. Therefore, C is B."
+    },
+    {
+      "premises": "All dogs have four legs. My pet has four legs.",
+      "conclusion": "My pet is a dog.",
+      "valid": false,
+      "explanation": "This is an invalid syllogism committing the fallacy of affirming the consequent. Having four legs is not sufficient to conclude something is a dog."
+    },
+    {
+      "premises": "If it rains, the ground gets wet. The ground is wet.",
+      "conclusion": "It rained.",
+      "valid": false,
+      "explanation": "This is an invalid syllogism committing the fallacy of affirming the consequent. The ground could be wet for other reasons."
+    },
+    {
+      "premises": "If it rains, the ground gets wet. It did not rain.",
+      "conclusion": "The ground is not wet.",
+      "valid": false,
+      "explanation": "This is an invalid syllogism committing the fallacy of denying the antecedent. The ground could be wet for other reasons."
+    },
+    {
+      "premises": "If it rains, the ground gets wet. The ground is not wet.",
+      "conclusion": "It did not rain.",
+      "valid": true,
+      "explanation": "This is a valid syllogism using modus tollens (denying the consequent)."
+    }
+  ],
+  "mathematical_reasoning": [
+    {
+      "problem": "A store sells notebooks for $2.50 each and pens for $1.75 each. If a customer buys 3 notebooks and 4 pens, how much will they spend in total?",
+      "solution": "Cost of notebooks = 3 × $2.50 = $7.50\nCost of pens = 4 × $1.75 = $7.00\nTotal cost = $7.50 + $7.00 = $14.50",
+      "answer": "$14.50"
+    },
+    {
+      "problem": "A train travels at a speed of 60 miles per hour. How far will it travel in 2.5 hours?",
+      "solution": "Distance = Speed × Time\nDistance = 60 miles/hour × 2.5 hours = 150 miles",
+      "answer": "150 miles"
+    },
+    {
+      "problem": "If 8 workers can build a wall in 10 days, how many days would it take 5 workers to build the same wall, assuming all workers work at the same rate?",
+      "solution": "Let's calculate the total work: 8 workers × 10 days = 80 worker-days\nFor 5 workers: 80 worker-days ÷ 5 workers = 16 days",
+      "answer": "16 days"
+    },
+    {
+      "problem": "A rectangular garden has a length of 12 meters and a width of 8 meters. What is the area of the garden in square meters?",
+      "solution": "Area of rectangle = Length × Width\nArea = 12 meters × 8 meters = 96 square meters",
+      "answer": "96 square meters"
+    },
+    {
+      "problem": "If the price of a shirt increases from $25 to $30, what is the percentage increase?",
+      "solution": "Percentage increase = (Increase ÷ Original price) × 100%\nPercentage increase = ($5 ÷ $25) × 100% = 0.2 × 100% = 20%",
+      "answer": "20%"
+    }
+  ],
+  "analogical_reasoning": [
+    {
+      "analogy": "Bird is to sky as fish is to what?",
+      "answer": "water",
+      "explanation": "Birds fly in the sky, while fish swim in water. Both represent the natural environment where each animal moves."
+    },
+    {
+      "analogy": "Doctor is to patient as teacher is to what?",
+      "answer": "student",
+      "explanation": "A doctor treats patients, while a teacher instructs students. Both represent professional relationships where one person provides a service to another."
+    },
+    {
+      "analogy": "Pen is to writer as brush is to what?",
+      "answer": "painter",
+      "explanation": "A pen is the tool used by a writer, while a brush is the tool used by a painter. Both represent the primary instruments used by different creative professionals."
+    },
+    {
+      "analogy": "Leaf is to tree as page is to what?",
+      "answer": "book",
+      "explanation": "A leaf is a component of a tree, while a page is a component of a book. Both represent parts that make up a larger whole."
+    },
+    {
+      "analogy": "Light is to dark as noise is to what?",
+      "answer": "silence",
+      "explanation": "Light and dark are opposites in terms of visual perception, while noise and silence are opposites in terms of auditory perception."
+    }
+  ],
+  "causal_reasoning": [
+    {
+      "scenario": "Every time I water my plant, it grows taller. I watered my plant yesterday.",
+      "question": "What can I expect to happen to my plant?",
+      "answer": "The plant will grow taller.",
+      "explanation": "There is an established causal relationship between watering the plant and it growing taller. Since the plant was watered yesterday, we can expect it to grow taller."
+    },
+    {
+      "scenario": "When I turn the switch up, the light turns on. When I turn the switch down, the light turns off. The light is currently off.",
+      "question": "What is the likely position of the switch?",
+      "answer": "Down",
+      "explanation": "There is a causal relationship between the switch position and the light state. Since the light is off, the switch is likely in the down position."
+    },
+    {
+      "scenario": "Whenever it rains heavily, the river floods. It has been raining heavily for three days.",
+      "question": "What is likely to happen to the river?",
+      "answer": "The river will flood.",
+      "explanation": "There is a causal relationship between heavy rain and the river flooding. Since it has been raining heavily for three days, the river is likely to flood."
+    },
+    {
+      "scenario": "Every time I eat shellfish, I get a rash. I ate clams for dinner last night.",
+      "question": "What might I experience?",
+      "answer": "A rash",
+      "explanation": "There is a causal relationship between eating shellfish and getting a rash. Since clams are shellfish and were eaten last night, a rash is likely to develop."
+    },
+    {
+      "scenario": "When the temperature drops below freezing, water turns to ice. The temperature is forecast to drop to -5°C tonight.",
+      "question": "What will happen to water left outside?",
+      "answer": "It will freeze and turn to ice.",
+      "explanation": "There is a causal relationship between sub-freezing temperatures and water turning to ice. Since the temperature will drop below freezing, water left outside will freeze."
+    }
+  ],
+  "counterfactual_reasoning": [
+    {
+      "scenario": "If I had studied harder for the exam, I would have received a better grade.",
+      "question": "What is the implied cause of the poor grade?",
+      "answer": "Not studying hard enough",
+      "explanation": "The counterfactual statement implies that the actual cause of the poor grade was insufficient studying."
+    },
+    {
+      "scenario": "If the train hadn't been delayed, I would have arrived on time for the meeting.",
+      "question": "What is implied about the actual situation?",
+      "answer": "The person was late for the meeting because the train was delayed.",
+      "explanation": "The counterfactual statement implies that in reality, the train was delayed, causing the person to be late for the meeting."
+    },
+    {
+      "scenario": "If we had taken the other route, we wouldn't have encountered the traffic jam.",
+      "question": "What happened in reality?",
+      "answer": "They took a route that led to a traffic jam.",
+      "explanation": "The counterfactual statement implies that in reality, they took a route that led them into a traffic jam."
+    },
+    {
+      "scenario": "If the goalkeeper had jumped to the left, he would have blocked the penalty kick.",
+      "question": "What actually happened during the penalty kick?",
+      "answer": "The goalkeeper didn't jump to the left and didn't block the penalty kick.",
+      "explanation": "The counterfactual statement implies that in reality, the goalkeeper didn't jump to the left and therefore didn't block the penalty kick."
+    },
+    {
+      "scenario": "If the company had invested in new technology earlier, they wouldn't be struggling to compete now.",
+      "question": "What is implied about the company's current situation?",
+      "answer": "The company is struggling to compete because they didn't invest in new technology early enough.",
+      "explanation": "The counterfactual statement implies that in reality, the company didn't invest in new technology early enough, which is why they are now struggling to compete."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+
+# Foundation LLM Instruction Following Tests
+version: "1.0.0"
+name: "foundation_llm_instruction_following_tests"
+description: "Test suite for evaluating instruction following capabilities of foundation LLMs"
+
+# Test configuration
+test_config:
+  timeout_per_test: 180  # seconds
+  max_retries: 2
+  cache_responses: true
+  parallel_execution: true
+
+# Instruction types to test
+instruction_types:
+  - format_constraints
+  - multi_step_tasks
+  - conditional_instructions
+  - creative_tasks
+  - constraint_satisfaction
+
+# Metrics for evaluating instruction following
+metrics:
+  - name: "instruction_following"
+    description: "Adherence to the given instructions"
+    weight: 1.0
+    
+  - name: "completeness"
+    description: "Completion of all required steps or components"
+    weight: 0.9
+    
+  - name: "constraint_satisfaction"
+    description: "Satisfaction of all specified constraints"
+    weight: 0.8
+    
+  - name: "format_adherence"
+    description: "Adherence to specified output format"
+    weight: 0.7
+
+# Test cases for instruction following
+test_cases:
+  # Format constraints test cases
+  - id: "format_constraints"
+    name: "Format Constraints"
+    description: "Tests ability to follow specific format constraints"
+    domain: "format_constraints"
+    difficulty: "medium"
+    prompt_template: |
+      Please provide information about {topic} in the following format:
+      
+      1. Title: A descriptive title (maximum 10 words)
+      2. Summary: A one-sentence summary (maximum 20 words)
+      3. Key Points: Exactly 3 bullet points (each maximum 15 words)
+      4. Conclusion: A concluding statement (maximum 15 words)
+      
+      Do not include any additional information or explanations.
+    examples:
+      - input:
+          topic: "artificial intelligence"
+        expected_format: 
+          has_title: true
+          title_word_count: "<=10"
+          has_summary: true
+          summary_word_count: "<=20"
+          has_key_points: true
+          key_points_count: "==3"
+          key_point_word_count: "<=15"
+          has_conclusion: true
+          conclusion_word_count: "<=15"
+    test_cases_count: 10
+    evaluation_method: "format_check"
+    primary_metrics: ["instruction_following", "format_adherence"]
+    
+  # Multi-step tasks test cases
+  - id: "multi_step_tasks"
+    name: "Multi-Step Tasks"
+    description: "Tests ability to follow multi-step instructions"
+    domain: "multi_step_tasks"
+    difficulty: "medium"
+    prompt_template: |
+      Please complete the following tasks in order:
+      
+      1. Create an acronym using the letters in the word "{word}".
+      2. Write a short definition for each letter in your acronym (one sentence each).
+      3. Combine these definitions into a coherent paragraph.
+      4. Suggest two practical applications for your concept.
+      
+      Make sure to complete all steps and clearly label each part of your response.
+    examples:
+      - input:
+          word: "LEARN"
+        expected_steps:
+          step1_completed: true
+          step2_completed: true
+          step3_completed: true
+          step4_completed: true
+    test_cases_count: 10
+    evaluation_method: "step_completion_check"
+    primary_metrics: ["instruction_following", "completeness"]
+
+# Evaluation configuration
+evaluation:
+  automated_metrics: true
+  comparative_analysis: true
+  reference_model: "gpt4o"  # Model to use as a reference for comparing others

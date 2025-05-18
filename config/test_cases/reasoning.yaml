@@ -1,0 +1,94 @@
+
+# Foundation LLM Reasoning Tests
+version: "1.0.0"
+name: "foundation_llm_reasoning_tests"
+description: "Test suite for evaluating reasoning capabilities of foundation LLMs"
+
+# Test configuration
+test_config:
+  timeout_per_test: 300  # seconds
+  max_retries: 2
+  cache_responses: true
+  parallel_execution: true
+
+# Reasoning domains to test
+reasoning_domains:
+  - logical_reasoning
+  - mathematical_reasoning
+  - analogical_reasoning
+  - causal_reasoning
+  - counterfactual_reasoning
+
+# Metrics for evaluating reasoning capabilities
+metrics:
+  - name: "accuracy"
+    description: "Proportion of correct responses"
+    weight: 1.0
+    
+  - name: "reasoning_path_validity"
+    description: "Validity of the reasoning process used to arrive at the answer"
+    weight: 1.0
+    
+  - name: "logical_consistency"
+    description: "Internal consistency of the reasoning steps"
+    weight: 0.8
+    
+  - name: "step_by_step_articulation"
+    description: "Ability to break down reasoning into clear steps"
+    weight: 0.7
+
+# Test cases for logical reasoning
+test_cases:
+  # Logical reasoning test cases
+  - id: "logical_syllogisms"
+    name: "Classical Syllogisms"
+    description: "Tests ability to evaluate and complete classical logical syllogisms"
+    domain: "logical_reasoning"
+    difficulty: "medium"
+    prompt_template: |
+      Evaluate the following syllogism and determine if the conclusion logically follows from the premises.
+      
+      Premises:
+      {premises}
+      
+      Conclusion:
+      {conclusion}
+      
+      Is this syllogism valid? Answer with "Valid" or "Invalid" and explain your reasoning step by step.
+    examples:
+      - input:
+          premises: "All humans are mortal. Socrates is human."
+          conclusion: "Socrates is mortal."
+        expected_output: "Valid"
+      - input:
+          premises: "All dogs have four legs. My pet has four legs."
+          conclusion: "My pet is a dog."
+        expected_output: "Invalid"
+    test_cases_count: 10
+    evaluation_method: "exact_match"
+    primary_metrics: ["accuracy", "reasoning_path_validity"]
+    
+  # Mathematical reasoning test cases
+  - id: "arithmetic_word_problems"
+    name: "Arithmetic Word Problems"
+    description: "Tests ability to solve arithmetic word problems requiring multiple steps"
+    domain: "mathematical_reasoning"
+    difficulty: "medium"
+    prompt_template: |
+      Solve the following math word problem. Show your work step by step and explain your reasoning.
+      
+      Problem:
+      {problem}
+    examples:
+      - input:
+          problem: "A store sells notebooks for $2.50 each and pens for $1.75 each. If a customer buys 3 notebooks and 4 pens, how much will they spend in total?"
+        expected_answer: "$14.50"
+    test_cases_count: 10
+    evaluation_method: "numerical_comparison"
+    primary_metrics: ["accuracy", "step_by_step_articulation"]
+
+# Evaluation configuration
+evaluation:
+  automated_metrics: true
+  comparative_analysis: true
+  reference_model: "gpt4o"  # Model to use as a reference for comparing others

@@ -1,0 +1,230 @@
+
+{
+  "format_constraints": [
+    {
+      "topic": "artificial intelligence",
+      "expected_format": {
+        "has_title": true,
+        "title_word_count": "<=10",
+        "has_summary": true,
+        "summary_word_count": "<=20",
+        "has_key_points": true,
+        "key_points_count": "==3",
+        "key_point_word_count": "<=15",
+        "has_conclusion": true,
+        "conclusion_word_count": "<=15"
+      }
+    },
+    {
+      "topic": "climate change",
+      "expected_format": {
+        "has_title": true,
+        "title_word_count": "<=10",
+        "has_summary": true,
+        "summary_word_count": "<=20",
+        "has_key_points": true,
+        "key_points_count": "==3",
+        "key_point_word_count": "<=15",
+        "has_conclusion": true,
+        "conclusion_word_count": "<=15"
+      }
+    },
+    {
+      "topic": "renewable energy",
+      "expected_format": {
+        "has_title": true,
+        "title_word_count": "<=10",
+        "has_summary": true,
+        "summary_word_count": "<=20",
+        "has_key_points": true,
+        "key_points_count": "==3",
+        "key_point_word_count": "<=15",
+        "has_conclusion": true,
+        "conclusion_word_count": "<=15"
+      }
+    },
+    {
+      "topic": "digital privacy",
+      "expected_format": {
+        "has_title": true,
+        "title_word_count": "<=10",
+        "has_summary": true,
+        "summary_word_count": "<=20",
+        "has_key_points": true,
+        "key_points_count": "==3",
+        "key_point_word_count": "<=15",
+        "has_conclusion": true,
+        "conclusion_word_count": "<=15"
+      }
+    },
+    {
+      "topic": "space exploration",
+      "expected_format": {
+        "has_title": true,
+        "title_word_count": "<=10",
+        "has_summary": true,
+        "summary_word_count": "<=20",
+        "has_key_points": true,
+        "key_points_count": "==3",
+        "key_point_word_count": "<=15",
+        "has_conclusion": true,
+        "conclusion_word_count": "<=15"
+      }
+    }
+  ],
+  "multi_step_tasks": [
+    {
+      "word": "LEARN",
+      "expected_steps": {
+        "step1_completed": true,
+        "step2_completed": true,
+        "step3_completed": true,
+        "step4_completed": true
+      }
+    },
+    {
+      "word": "SMART",
+      "expected_steps": {
+        "step1_completed": true,
+        "step2_completed": true,
+        "step3_completed": true,
+        "step4_completed": true
+      }
+    },
+    {
+      "word": "FOCUS",
+      "expected_steps": {
+        "step1_completed": true,
+        "step2_completed": true,
+        "step3_completed": true,
+        "step4_completed": true
+      }
+    },
+    {
+      "word": "DREAM",
+      "expected_steps": {
+        "step1_completed": true,
+        "step2_completed": true,
+        "step3_completed": true,
+        "step4_completed": true
+      }
+    },
+    {
+      "word": "POWER",
+      "expected_steps": {
+        "step1_completed": true,
+        "step2_completed": true,
+        "step3_completed": true,
+        "step4_completed": true
+      }
+    }
+  ],
+  "conditional_instructions": [
+    {
+      "condition": "If the current year is even",
+      "true_action": "List three advantages of renewable energy",
+      "false_action": "List three challenges of renewable energy implementation",
+      "current_year": 2024,
+      "expected_action": "true_action"
+    },
+    {
+      "condition": "If the word 'apple' has an odd number of letters",
+      "true_action": "Write a short poem about autumn",
+      "false_action": "Write a short poem about spring",
+      "expected_action": "true_action"
+    },
+    {
+      "condition": "If 15 + 27 is greater than 40",
+      "true_action": "Explain the water cycle in three sentences",
+      "false_action": "Explain photosynthesis in three sentences",
+      "expected_action": "true_action"
+    },
+    {
+      "condition": "If the capital of France is London",
+      "true_action": "List three famous French artists",
+      "false_action": "List three famous French landmarks",
+      "expected_action": "false_action"
+    },
+    {
+      "condition": "If the square root of 16 is less than 5",
+      "true_action": "Provide three tips for effective time management",
+      "false_action": "Provide three tips for improving concentration",
+      "expected_action": "true_action"
+    }
+  ],
+  "creative_tasks": [
+    {
+      "instruction": "Write a six-word story that evokes sadness",
+      "constraints": {
+        "word_count": 6,
+        "emotion": "sadness"
+      }
+    },
+    {
+      "instruction": "Create a recipe for a dish named 'Moonlight Surprise' using only five ingredients",
+      "constraints": {
+        "ingredient_count": 5,
+        "must_include_name": "Moonlight Surprise"
+      }
+    },
+    {
+      "instruction": "Write a dialogue between the sun and the moon that's exactly 10 lines long",
+      "constraints": {
+        "dialogue_lines": 10,
+        "characters": ["sun", "moon"]
+      }
+    },
+    {
+      "instruction": "Invent three new words and their definitions that could describe emotions we don't have names for yet",
+      "constraints": {
+        "word_count": 3,
+        "domain": "emotions"
+      }
+    },
+    {
+      "instruction": "Write a short story where the first letter of each sentence spells out the word 'DREAM'",
+      "constraints": {
+        "acrostic": "DREAM",
+        "format": "first_letter_of_sentences"
+      }
+    }
+  ],
+  "constraint_satisfaction": [
+    {
+      "instruction": "Write a paragraph about technology that doesn't use the letter 'e'",
+      "constraints": {
+        "topic": "technology",
+        "forbidden_letters": ["e"]
+      }
+    },
+    {
+      "instruction": "Create a 5-line poem where each line has exactly 5 syllables",
+      "constraints": {
+        "line_count": 5,
+        "syllables_per_line": 5
+      }
+    },
+    {
+      "instruction": "Write a sentence that contains exactly 7 words and includes the words 'mountain', 'whisper', and 'dream'",
+      "constraints": {
+        "word_count": 7,
+        "required_words": ["mountain", "whisper", "dream"]
+      }
+    },
+    {
+      "instruction": "Create a short story of exactly 50 words that begins with 'The door opened' and ends with 'nothing was ever the same'",
+      "constraints": {
+        "word_count": 50,
+        "first_phrase": "The door opened",
+        "last_phrase": "nothing was ever the same"
+      }
+    },
+    {
+      "instruction": "Write a paragraph where each word is one letter longer than the previous word, starting with a one-letter word",
+      "constraints": {
+        "pattern": "increasing_word_length",
+        "start_length": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+
+# Foundation Model Testing Framework - Main Configuration
+
+general:
+  name: "Foundation Model Testing"
+  version: "1.0.0"
+  description: "Testing framework for foundation LLMs from OpenAI and Anthropic"
+  output_dir: "results"
+  log_level: "info"
+
+parallel:
+  workers: 4
+  timeout_seconds: 3600
+  retry_attempts: 2
+
+categories:
+  foundation_llm:
+    name: "Foundation Language Models"
+    description: "Tests for foundation LLMs from OpenAI and Anthropic"
+    priority: "critical"
+    models:
+      # OpenAI Models
+      - name: "gpt4o"
+        config_path: "models/openai/gpt4o.yaml"
+        priority: "critical"
+      - name: "gpt4_turbo"
+        config_path: "models/openai/gpt4_turbo.yaml"
+        priority: "high"
+      - name: "gpt4_1"
+        config_path: "models/openai/gpt4_1.yaml"
+        priority: "high"
+      - name: "gpt4_5_preview"
+        config_path: "models/openai/gpt4_5_preview.yaml"
+        priority: "critical"
+        
+      # Anthropic Models
+      - name: "claude3_opus"
+        config_path: "models/anthropic/claude3_opus.yaml"
+        priority: "critical"
+      - name: "claude3_sonnet"
+        config_path: "models/anthropic/claude3_sonnet.yaml"
+        priority: "high"
+      - name: "claude3_haiku"
+        config_path: "models/anthropic/claude3_haiku.yaml"
+        priority: "medium"
+      - name: "claude_3_7_sonnet"
+        config_path: "models/anthropic/claude_3_7_sonnet.yaml"
+        priority: "critical"
+    
+    test_suites:
+      - name: "factual_accuracy"
+        config_path: "test_cases/factual_accuracy.yaml"
+        weight: 1.0
+      - name: "reasoning"
+        config_path: "test_cases/reasoning.yaml"
+        weight: 1.0
+      - name: "instruction_following"
+        config_path: "test_cases/instruction_following.yaml"
+        weight: 0.8
+      - name: "extended_context"
+        config_path: "test_cases/extended_context.yaml"
+        weight: 0.6
+
+execution:
+  cache_responses: true
+  save_raw_responses: true
+  generate_reports: true
+  report_formats: ["yaml", "json", "html"]
+  visualization_types: ["bar", "radar", "heatmap"]
+
+metrics:
+  - name: "accuracy"
+    weight: 1.0
+  - name: "reasoning_score"
+    weight: 1.0
+  - name: "instruction_following"
+    weight: 0.8
+  - name: "hallucination_rate"
+    weight: 0.9
+    inverse: true  # Lower is better
+  - name: "tokens_per_second"
+    weight: 0.6
+  - name: "cost_per_1k_tokens"
+    weight: 0.7
+    inverse: true  # Lower is better

@@ -1,0 +1,100 @@
+
+# Foundation LLM Extended Context Tests
+version: "1.0.0"
+name: "foundation_llm_extended_context_tests"
+description: "Test suite for evaluating how models handle extended context"
+
+# Test configuration
+test_config:
+  timeout_per_test: 600  # seconds
+  max_retries: 2
+  cache_responses: true
+  parallel_execution: true
+
+# Context types to test
+context_types:
+  - long_document
+  - multi_document
+  - code_base
+  - conversation_history
+
+# Metrics for evaluating extended context handling
+metrics:
+  - name: "context_utilization"
+    description: "Ability to utilize information from different parts of the context"
+    weight: 1.0
+    
+  - name: "information_retrieval"
+    description: "Accuracy in retrieving specific information from the context"
+    weight: 0.9
+    
+  - name: "context_integration"
+    description: "Ability to integrate information across the context"
+    weight: 0.8
+    
+  - name: "memory_consistency"
+    description: "Consistency in remembering details throughout the context"
+    weight: 0.7
+
+# Test cases for extended context
+test_cases:
+  # Long document test cases
+  - id: "long_document_qa"
+    name: "Long Document Q&A"
+    description: "Tests ability to answer questions about a long document"
+    domain: "long_document"
+    difficulty: "hard"
+    prompt_template: |
+      Here is a long document:
+      
+      {document}
+      
+      Based on the document above, please answer the following question:
+      
+      Question: {question}
+    examples:
+      - input:
+          document: "This is a placeholder for a long document (10,000+ words) about climate change, its causes, effects, and potential solutions..."
+          question: "What are the three main greenhouse gases mentioned in the document and their sources?"
+        expected_output: "Carbon dioxide (fossil fuel combustion, deforestation), methane (agriculture, landfills), nitrous oxide (fertilizers, industrial processes)"
+    test_cases_count: 5
+    evaluation_method: "semantic_similarity"
+    primary_metrics: ["context_utilization", "information_retrieval"]
+    
+  # Multi-document test cases
+  - id: "multi_document_synthesis"
+    name: "Multi-Document Synthesis"
+    description: "Tests ability to synthesize information across multiple documents"
+    domain: "multi_document"
+    difficulty: "hard"
+    prompt_template: |
+      Here are several documents:
+      
+      Document 1:
+      {document1}
+      
+      Document 2:
+      {document2}
+      
+      Document 3:
+      {document3}
+      
+      Based on all the documents above, please answer the following question:
+      
+      Question: {question}
+    examples:
+      - input:
+          document1: "This is a placeholder for a document about renewable energy sources..."
+          document2: "This is a placeholder for a document about energy storage technologies..."
+          document3: "This is a placeholder for a document about grid infrastructure challenges..."
+          question: "What are the key challenges in transitioning to a 100% renewable energy grid, and what solutions are proposed across these documents?"
+        expected_output: "Key challenges include intermittency of renewable sources, energy storage limitations, and grid infrastructure. Solutions include diverse renewable mix, advanced battery technologies, pumped hydro storage, smart grid development, and demand response systems."
+    test_cases_count: 5
+    evaluation_method: "semantic_similarity"
+    primary_metrics: ["context_integration", "information_retrieval"]
+
+# Evaluation configuration
+evaluation:
+  automated_metrics: true
+  comparative_analysis: true
+  reference_model: "gpt4o"  # Model to use as a reference for comparing others

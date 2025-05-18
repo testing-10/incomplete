@@ -1,0 +1,61 @@
+
+# Claude 3 Haiku Configuration
+name: "Claude 3 Haiku"
+model_id: "claude-3-haiku-20240307"
+provider: "Anthropic"
+version: "20240307"
+release_date: "2024-03-07"
+description: "Anthropic's fastest and most compact model optimized for high-throughput use cases"
+
+api_configuration:
+  endpoint: "https://api.anthropic.com/v1/messages"
+  api_key: "${ANTHROPIC_API_KEY}"
+  api_type: "rest"
+  request_timeout: 120
+  max_retries: 3
+  retry_delay: 2
+  api_version: "2023-06-01"
+
+capabilities:
+  multimodal: true
+  vision: true
+  function_calling: true
+  tool_use: true
+  xml_format: true
+  streaming: true
+  multi_turn_conversation: true
+  reasoning: true
+  code_generation: true
+  multilingual: true
+  system_prompt: true
+
+performance:
+  context_window: 200000
+  input_token_limit: 200000
+  output_token_limit: 4096
+  vision_resolution: "medium" # Up to 1024x1024
+  default_temperature: 1.0
+  supports_temperature: true
+  temperature_range: [0.0, 1.0]
+  supports_top_p: true
+  top_p_range: [0.0, 1.0]
+  supports_top_k: true
+  top_k_range: [1, 500]
+
+pricing:
+  input_tokens: 0.00000025 # $0.25 per million tokens
+  output_tokens: 0.00000125 # $1.25 per million tokens
+  vision_input: 0.00000025 # Same as text input
+
+testing_parameters:
+  default_system_prompt: "You are Claude, a helpful AI assistant."
+  test_with_system_prompts: true
+  test_with_vision: false
+  test_with_tool_use: false
+  use_streaming: false
+  evaluation_modes:
+    - standard
+    - chain_of_thought
+    - few_shot
+    - zero_shot
+  temperature_variations: [0.0, 0.5, 1.0]
